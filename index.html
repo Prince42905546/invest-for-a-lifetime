@@ -6,9 +6,9 @@
     <title>Invest for a Lifetime - Safe and Smart</title>
     <style>
         :root {
-            --primary-color: #0b132b; /* Deep Royal Blue */
-            --accent-color: #d4af37;  /* Gold */
-            --bg-color: #f8f9fa;      /* Soft White */
+            --primary-color: #0b132b;
+            --accent-color: #d4af37;
+            --bg-color: #f8f9fa;
             --text-color: #333333;
             --white: #ffffff;
         }
@@ -32,14 +32,13 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
+            font-size: 2.3rem;
         }
 
         header p {
             color: var(--white);
             margin-top: 10px;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         nav {
@@ -81,7 +80,7 @@
         .section h2 {
             color: var(--primary-color);
             margin-top: 0;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             border-bottom: 2px solid #eee;
             padding-bottom: 10px;
         }
@@ -89,7 +88,7 @@
         /* Zodiac Grid */
         .zodiac-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -102,6 +101,7 @@
             border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
+            font-weight: bold;
         }
 
         .zodiac-card:hover {
@@ -110,7 +110,16 @@
             transform: translateY(-3px);
         }
 
-        /* E-commerce Store Grid */
+        #rashifal-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f3f5;
+            border-left: 5px solid var(--accent-color);
+            display: none;
+            font-size: 1.1rem;
+        }
+
+        /* Store Grid */
         .store-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -140,20 +149,23 @@
 
         .btn {
             background-color: var(--primary-color);
-            color: var(--accent-color);
+color: var(--accent-color);
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn:hover {
             background-color: var(--accent-color);
             color: var(--primary-color);
         }
-        /* AI Chatbox Mockup */
+
+        /* AI Chat */
         .ai-chat-box {
             background: #f1f3f5;
             padding: 20px;
@@ -162,14 +174,19 @@
         }
 
         .ai-input {
-            width: 70%;
+            width: 65%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-right: 10px;
         }
 
-        /* Footer */
+        #ai-response {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #1c2541;
+        }
+
         footer {
             background-color: var(--primary-color);
             color: var(--white);
@@ -184,69 +201,121 @@
 
     <header>
         <h1>🌟 Invest for a Lifetime - Safe and Smart 🌟</h1>
-        <p>Your Ultimate Destination for Daily Horoscope, Spiritual Insights & Sacred Products</p>
+        <p>दैनिक राशिफल, सटीक ज्योतिषीय मार्गदर्शन और आध्यात्मिक स्टोर</p>
     </header>
 
     <nav>
-        <a href="#horoscope">Rashifal</a>
-        <a href="#ai-astrologer">AI Astrologer</a>
-        <a href="#store">Spiritual Store</a>
-        <a href="#youtube">YouTube Videos</a>
-        <a href="#contact">Book Consultation</a>
+        <a href="#horoscope">राशिफल</a>
+        <a href="#ai-astrologer">AI एस्ट्रोलॉजर</a>
+        <a href="#store">आध्यात्मिक स्टोर</a>
+        <a href="#youtube">YouTube चैनल</a>
+        <a href="#contact">संपर्क करें</a>
     </nav>
 
     <div class="container">
 
-        <!-- 1. Daily Horoscope Section -->
+        <!-- 1. Rashifal Section with Working JavaScript -->
         <div id="horoscope" class="section">
-            <h2>🔮 Daily Horoscope & Zodiac Predictions</h2>
-            <p>Select your zodiac sign to read daily, weekly, and monthly astrological forecasts:</p>
+            <h2>🔮 दैनिक राशिफल (Daily Horoscope)</h2>
+            <p>अपनी राशि पर क्लिक करें और आज का भविष्यफल देखें:</p>
             <div class="zodiac-grid">
-                <div class="zodiac-card">♈ Mesh (Aries)</div>
-                <div class="zodiac-card">♉ Vrishabh (Taurus)</div>
-                <div class="zodiac-card">♊ Mithun (Gemini)</div>
-                <div class="zodiac-card">♋ Kark (Cancer)</div>
-                <div class="zodiac-card">♌ Singh (Leo)</div>
-                <div class="zodiac-card">♍ Kanya (Virgo)</div>
+                <div class="zodiac-card" onclick="showRashifal('मेष (Aries): आज का दिन आपके लिए ऊर्जावान रहेगा। व्यापार में लाभ और धन लाभ के योग हैं।')">♈ मेष (Aries)</div>
+                <div class="zodiac-card" onclick="showRashifal('वृषभ (Taurus): पारिवारिक जीवन सुखमय रहेगा। निवेश करने के लिए आज का दिन बहुत शुभ है।')">♉ वृषभ (Taurus)</div>
+                <div class="zodiac-card" onclick="showRashifal('मिथुन (Gemini): छात्रों को मेहनत का पूरा फल मिलेगा। सेहत को लेकर थोड़ा सतर्क रहें।')">♊ मिथुन (Gemini)</div>
+                <div class="zodiac-card" onclick="showRashifal('कर्क (Cancer): मन प्रसन्न रहेगा। रुके हुए कार्य पूरे होंगे और नए अवसर मिलेंगे।')">♋ कर्क (Cancer)</div>
+                <div class="zodiac-card" onclick="showRashifal('सिंह (Leo): मान-सम्मान में वृद्धि होगी। कार्यक्षेत्र में आपकी सराहना होगी।')">♌ सिंह (Leo)</div>
+                <div class="zodiac-card" onclick="showRashifal('कन्या (Virgo): आर्थिक मामलों में सावधानी बरतें। यात्रा के योग बन रहे हैं।')">♍ कन्या (Virgo)</div>
             </div>
+            <div id="rashifal-result"></div>
         </div>
 
-        <!-- 2. AI Astrologer Feature -->
+        <!-- 2. Interactive AI Astrologer -->
         <div id="ai-astrologer" class="section">
-            <h2>✨ AI Astrologer Feature</h2>
-            <p>Get instant personalized spiritual guidance and answers to your life questions from our interactive AI widget.</p>
+            <h2>✨ AI एस्ट्रोलॉजर से सवाल पूछें</h2>
+            <p>अपने करियर, विवाह या भाग्य से जुड़ा कोई भी सवाल नीचे पूछें:</p>
             <div class="ai-chat-box">
-                <p><em>"Namaste! Ask me anything about your career, marriage, or daily stars..."</em></p>
-                <input type="text" class="ai-input" placeholder="Type your question here (e.g., How is my career today?)...">
-                <button class="btn">Ask AI</button>
+                <input type="text" id="user-question" class="ai-input" placeholder="अपना सवाल यहाँ लिखें (जैसे: मेरा आज का दिन कैसा रहेगा?)...">
+                <button class="btn" onclick="askAIAstrologer()">पूछें</button>
+                <div id="ai-response"></div>
             </div>
         </div>
 
-        <!-- 3. Spiritual E-Commerce Store -->
+        <!-- 3. E-Commerce Store with WhatsApp Buy Button -->
         <div id="store" class="section">
-            <h2>🛍️ Spiritual E-Commerce Store</h2>
-            <p>Explore our energized products, sacred artifacts, and authentic zodiac accessories.</p>
+            <h2>🛍️ आध्यात्मिक और ज्योतिषीय स्टोर</h2>
+            <p>एनर्जीज्ड प्रोडक्ट्स सीधे ऑर्डर करें:</p>
             <div class="store-grid">
-                <div class="product-card">
-                    <h3>Energized Rudraksha Mala</h3>
-                    <p>Original 5 Mukhi Rudraksha for peace and focus.</p>
+<div class="product-card">
+                    <h3>एनर्जीज्ड रुद्राक्ष माला</h3>
+                    <p>शांति और एकाग्रता के लिए मूल 5 मुखी रुद्राक्ष।</p>
                     <div class="price">₹1,100</div>
-                    <button class="btn">Buy Now</button>
+                    <a href="https://wa.me/919999999999?text=I%20want%20to%20buy%20Rudraksha%20Mala" target="_blank" class="btn">WhatsApp पर खरीदें</a>
                 </div>
                 <div class="product-card">
-                    <h3>Natural Citrine Crystal</h3>
-                    <p>Attract wealth, prosperity, and positive energy.</p>
+                    <h3>सिट्रीन क्रिस्टल (Citrine)</h3>
+                    <p>धन, समृद्धि और पॉजिटिव ऊर्जा को आकर्षित करें।</p>
                     <div class="price">₹750</div>
-                    <button class="btn">Buy Now</button>
+                    <a href="https://wa.me/919999999999?text=I%20want%20to%20buy%20Citrine%20Crystal" target="_blank" class="btn">WhatsApp पर खरीदें</a>
                 </div>
                 <div class="product-card">
-                    <h3>Sacred Puja Yantra</h3>
-                    <p>Kuber Yantra for financial stability and growth.</p>
+                    <h3>कुबेर यंत्र</h3>
+                    <p>financial stability और तरक्की के लिए सिद्ध यंत्र।</p>
                     <div class="price">₹500</div>
-                    <button class="btn">Buy Now</button>
+                    <a href="https://wa.me/919999999999?text=I%20want%20to%20buy%20Kuber%20Yantra" target="_blank" class="btn">WhatsApp पर खरीदें</a>
                 </div>
             </div>
         </div>
 
         <!-- 4. YouTube Integration -->
         <div id="youtube" class="section" style="text-align: center;">
+            <h2>📹 YouTube कम्युनिटी और वीडियो</h2>
+            <p>हमारे डेली राशिफल वीडियो देखने के लिए चैनल सब्सक्राइब करें:</p>
+            <a href="https://www.youtube.com" target="_blank" class="btn" style="background-color: #ff0000; color: white; margin-top: 15px;">YouTube चैनल पर जाएं</a>
+        </div>
+
+        <!-- 5. Contact / Consultation -->
+        <div id="contact" class="section">
+            <h2>📞 व्यक्तिगत कंसल्टेशन बुक करें</h2>
+            <form onsubmit="event.preventDefault(); alert('आपका अनुरोध भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।');" style="display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin-top: 20px;">
+                <input type="text" placeholder="आपका पूरा नाम" class="ai-input" style="width: 100%;" required>
+                <input type="text" placeholder="मोबाइल नंबर / WhatsApp" class="ai-input" style="width: 100%;" required>
+                <textarea placeholder="अपनी समस्या या सवाल यहाँ लिखें..." class="ai-input" style="width: 100%; height: 100px;" required></textarea>
+                <button type="submit" class="btn" style="width: 180px;">कंसल्टेशन बुक करें</button>
+            </form>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Invest for a Lifetime - Safe and Smart. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Rashifal Logic
+        function showRashifal(text) {
+            const box = document.getElementById('rashifal-result');
+            box.style.display = 'block';
+            box.innerHTML = '<strong>भविष्यफल:</strong> ' + text;
+        }
+
+        // AI Astrologer Logic
+        function askAIAstrologer() {
+            const q = document.getElementById('user-question').value;
+            const res = document.getElementById('ai-response');
+            if(q.trim() === "") {
+                res.innerHTML = "कृपया पहले अपना सवाल लिखें!";
+                return;
+            }
+            const answers = [
+                "ग्रहों की चाल आपके पक्ष में है, आज का दिन निवेश और नए कार्यों के लिए उत्तम है!",
+                "धैर्य रखें, आने वाले कुछ दिनों में आपको बड़ा वित्तीय लाभ मिल सकता है।",
+                "आज के दिन भगवान सूर्य को जल अर्पित करें, आपके सभी रुके हुए काम बनेंगे।",
+                "व्यापार और नौकरी में तरक्की के योग बन रहे हैं, मेहनत जारी रखें।"
+            ];
+            const randomAns = answers[Math.floor(Math.random() * answers.length)];
+            res.innerHTML = "🌟 AI ज्योतिष उत्तर: " + randomAns;
+        }
+    </script>
+
+</body>
+</html>
