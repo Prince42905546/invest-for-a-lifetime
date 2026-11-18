@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest for a Lifetime - Safe and Smart</title>
+    <style>
+        :root {
+            --primary-color: #0b132b; /* Deep Royal Blue */
+            --accent-color: #d4af37;  /* Gold */
+            --bg-color: #f8f9fa;      /* Soft White */
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            color: var(--white);
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            background-color: #1c2541;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 12px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 16px;
+            margin: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: var(--white);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        /* Zodiac Grid */
+        .zodiac-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .zodiac-card {
+            background: #fdfbf7;
+            border: 1px solid #e6d5b8;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .zodiac-card:hover {
+            background: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* E-commerce Store Grid */
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .product-card h3 {
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        .price {
+            color: #b8860b;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        /* AI Chatbox Mockup */
+        .ai-chat-box {
+            background: #f1f3f5;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .ai-input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 3px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🌟 Invest for a Lifetime - Safe and Smart 🌟</h1>
+        <p>Your Ultimate Destination for Daily Horoscope, Spiritual Insights & Sacred Products</p>
+    </header>
+
+    <nav>
+        <a href="#horoscope">Rashifal</a>
+        <a href="#ai-astrologer">AI Astrologer</a>
+        <a href="#store">Spiritual Store</a>
+        <a href="#youtube">YouTube Videos</a>
+        <a href="#contact">Book Consultation</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. Daily Horoscope Section -->
+        <div id="horoscope" class="section">
+            <h2>🔮 Daily Horoscope & Zodiac Predictions</h2>
+            <p>Select your zodiac sign to read daily, weekly, and monthly astrological forecasts:</p>
+            <div class="zodiac-grid">
+                <div class="zodiac-card">♈ Mesh (Aries)</div>
+                <div class="zodiac-card">♉ Vrishabh (Taurus)</div>
+                <div class="zodiac-card">♊ Mithun (Gemini)</div>
+                <div class="zodiac-card">♋ Kark (Cancer)</div>
+                <div class="zodiac-card">♌ Singh (Leo)</div>
+                <div class="zodiac-card">♍ Kanya (Virgo)</div>
+            </div>
+        </div>
+
+        <!-- 2. AI Astrologer Feature -->
+        <div id="ai-astrologer" class="section">
+            <h2>✨ AI Astrologer Feature</h2>
+            <p>Get instant personalized spiritual guidance and answers to your life questions from our interactive AI widget.</p>
+            <div class="ai-chat-box">
+                <p><em>"Namaste! Ask me anything about your career, marriage, or daily stars..."</em></p>
+                <input type="text" class="ai-input" placeholder="Type your question here (e.g., How is my career today?)...">
+                <button class="btn">Ask AI</button>
+            </div>
+        </div>
+
+        <!-- 3. Spiritual E-Commerce Store -->
+        <div id="store" class="section">
+            <h2>🛍️ Spiritual E-Commerce Store</h2>
+            <p>Explore our energized products, sacred artifacts, and authentic zodiac accessories.</p>
+            <div class="store-grid">
+                <div class="product-card">
+                    <h3>Energized Rudraksha Mala</h3>
+                    <p>Original 5 Mukhi Rudraksha for peace and focus.</p>
+                    <div class="price">₹1,100</div>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="product-card">
+                    <h3>Natural Citrine Crystal</h3>
+                    <p>Attract wealth, prosperity, and positive energy.</p>
+                    <div class="price">₹750</div>
+                    <button class="btn">Buy Now</button>
+                </div>
+                <div class="product-card">
+                    <h3>Sacred Puja Yantra</h3>
+                    <p>Kuber Yantra for financial stability and growth.</p>
+                    <div class="price">₹500</div>
+                    <button class="btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. YouTube Integration -->
+        <div id="youtube" class="section" style="text-align: center;">
